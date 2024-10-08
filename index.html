@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="game-container">
+        <h1>Hangman</h1>
+        <div class="game-info">
+            <div class="scoreboard">
+                <span class="score-item">Wins: <span id="wins">0</span></span>
+                <span class="score-item">Losses: <span id="losses">0</span></span>
+            </div>
+            <div id="timer" class="timer">Time: 60s</div>
+        </div>
+        <div class="game-area">
+            <div class="hangman-container">
+                <svg id="hangman" viewBox="0 0 200 250"></svg>
+            </div>
+            <div class="word-container">
+                <div id="word"></div>
+                <div id="category"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="categoryBtn" class="retro-btn">CATEGORY</button>
+            <button id="hintBtn" class="retro-btn">HINT (3 LEFT)</button>
+            <button id="restartBtn" class="retro-btn">RESTART</button>
+        </div>
+        <div id="keyboard" class="keyboard"></div>
+    </div>
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <h2>Select a Category</h2>
+            <button data-category="animals" class="retro-btn">Animals</button>
+            <button data-category="movies" class="retro-btn">Movies</button>
+            <button data-category="countries" class="retro-btn">Countries</button>
+            <button data-category="colors" class="retro-btn">Colors</button>
+        </div>
+    </div>
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <h2>How to Play</h2>
+            <p>Guess the hidden word by selecting letters. You have 6 incorrect guesses before the game ends.</p>
+            <p>Use hints wisely - you only have 3!</p>
+            <button id="closeInstructions" class="retro-btn">Got it!</button>
+        </div>
+    </div>
+    <button id="helpBtn" class="help-btn retro-btn">?</button>
+    <script src="script.js"></script>
+</body>
+</html>
